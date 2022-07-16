@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:lems/home.dart';
+import 'package:lems/navi_bottom.dart';
 import 'add_dis.dart';
 // import 'package:cool_alert/cool_alert.dart';
 
@@ -73,7 +73,7 @@ class _confirmState extends State<confirm> {
                         Navigator.of(context).pop(true);
                         Navigator.push(context,
                             MaterialPageRoute(builder: ((context) {
-                          return home();
+                          return navi_bottom();
                         })));
                       });
                       return _dialog(context);
