@@ -15,9 +15,20 @@ class _homeState extends State<home> {
         FocusScope.of(context).requestFocus(new FocusNode());
       },
       child: (Scaffold(
+        extendBody: true,
         appBar: AppBar(
-          title: Text('Home'),
-          leading: Icon(Icons.menu),
+          title: Text(
+            'Home',
+            style: TextStyle(
+              fontFamily: 'Oswald',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          backgroundColor: Colors.amber,
+        ),
+        drawer: Container(
+          color: Colors.white,
+          width: 200,
         ),
         body: SingleChildScrollView(
           child: SafeArea(
@@ -31,9 +42,12 @@ class _homeState extends State<home> {
                       child: TextField(
                         decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.amber),
                               borderRadius: BorderRadius.circular(0)),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(40)),
+                            borderSide: BorderSide(color: Colors.amber),
+                            borderRadius: BorderRadius.circular(40),
+                          ),
                           hintText: 'Search',
                           suffixIcon: Icon(Icons.search),
                         ),
@@ -47,6 +61,7 @@ class _homeState extends State<home> {
                     'New Request',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Oswald',
                       fontSize: 28,
                     ),
                   ),
@@ -60,7 +75,7 @@ class _homeState extends State<home> {
                         padding: const EdgeInsets.all(8.0),
                         child: ListTile(
                           shape: RoundedRectangleBorder(
-                            side: BorderSide(color: Colors.black, width: 1),
+                            side: BorderSide(color: Colors.amber, width: 2),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           // leading: Text(' Std_Name'),

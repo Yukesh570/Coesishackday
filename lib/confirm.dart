@@ -1,6 +1,9 @@
 import 'dart:io';
+import 'dart:js';
 import 'package:flutter/material.dart';
+import 'package:lems/home.dart';
 import 'add_dis.dart';
+// import 'package:cool_alert/cool_alert.dart';
 
 class confirm extends StatefulWidget {
   final File? img;
@@ -24,7 +27,7 @@ class _confirmState extends State<confirm> {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: Color.fromARGB(255, 244, 229, 95)),
+                    color: Color.fromARGB(255, 246, 205, 83)),
                 child: Center(
                     child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -59,8 +62,55 @@ class _confirmState extends State<confirm> {
               ),
             ),
           ),
+          Container(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: Colors.amber),
+              onPressed: () async {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      Future.delayed(Duration(seconds: 1), () {
+                        Navigator.of(context).pop(true);
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: ((context) {
+                          return home();
+                        })));
+                      });
+                      return _dialog(context);
+                    });
+              },
+              child: Text('Confirm'),
+            ),
+            width: 100,
+          )
         ],
       ),
     ));
+  }
+
+  Widget _dialog(BuildContext context) {
+    return AlertDialog(
+      title: Center(
+          child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              radius: 25,
+              backgroundColor: Colors.black,
+              child: CircleAvatar(
+                radius: 23,
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.check,
+                  color: Colors.green,
+                ),
+              ),
+            ),
+          ),
+          const Text("Confirmed"),
+        ],
+      )),
+    );
   }
 }

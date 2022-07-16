@@ -41,14 +41,15 @@ class _navi_bottomState extends State<navi_bottom> {
               current_index = index;
             });
           },
-          activeColor: Colors.amber,
-          splashColor: Colors.black,
+          backgroundColor: Colors.amber,
+          activeColor: Colors.white,
+          splashColor: Colors.white,
           gapLocation: GapLocation.center,
           notchSmoothness: NotchSmoothness.verySmoothEdge,
           leftCornerRadius: 32,
           rightCornerRadius: 32,
           activeIndex: current_index,
-          icons: [Icons.home, Icons.shop],
+          icons: [Icons.home, Icons.person],
           // currentIndex: current_index,
           // items: [
           //   BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

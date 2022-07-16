@@ -110,10 +110,6 @@ class _camera_galleryState extends State<camera_gallery> {
                             ? ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.amber,
-                                  // padding: EdgeInsets.symmetric(
-                                  //     horizontal: 50, vertical: 20),
-                                  // textStyle: TextStyle(
-                                  //     fontSize: 30, fontWeight: FontWeight.bold)),
                                 ),
                                 onPressed: () {
                                   setState(() {
@@ -123,7 +119,8 @@ class _camera_galleryState extends State<camera_gallery> {
                                     }));
                                   });
                                 },
-                                child: Text('Done'))
+                                child: Text('Done'),
+                              )
                             : Text('')),
                   ],
                 ),
