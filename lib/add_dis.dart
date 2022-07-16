@@ -64,7 +64,7 @@ class _add_disState extends State<add_dis> {
               ),
               Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(5),
                 ),
                 child: Container(
                   child: Row(
