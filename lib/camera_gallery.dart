@@ -106,24 +106,25 @@ class _camera_galleryState extends State<camera_gallery> {
                       ),
                     ),
                     Container(
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.amber,
-                            // padding: EdgeInsets.symmetric(
-                            //     horizontal: 50, vertical: 20),
-                            // textStyle: TextStyle(
-                            //     fontSize: 30, fontWeight: FontWeight.bold)),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return confirm(_image = _image);
-                              }));
-                            });
-                          },
-                          child: Text('Done')),
-                    )
+                        child: _image != null
+                            ? ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.amber,
+                                  // padding: EdgeInsets.symmetric(
+                                  //     horizontal: 50, vertical: 20),
+                                  // textStyle: TextStyle(
+                                  //     fontSize: 30, fontWeight: FontWeight.bold)),
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return confirm(_image);
+                                    }));
+                                  });
+                                },
+                                child: Text('Done'))
+                            : Text('')),
                   ],
                 ),
               ),

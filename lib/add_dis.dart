@@ -9,6 +9,11 @@ class add_dis extends StatefulWidget {
 }
 
 class _add_disState extends State<add_dis> {
+  TextEditingController name_controller = TextEditingController();
+  TextEditingController price_controller = TextEditingController();
+  TextEditingController qty_controller = TextEditingController();
+  TextEditingController discrip_controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -45,15 +50,19 @@ class _add_disState extends State<add_dis> {
                         ),
                         discription(
                           detail: 'Name',
+                          controller: name_controller,
                         ),
                         discription(
                           detail: 'Price',
+                          controller: price_controller,
                         ),
                         discription(
                           detail: 'Qty',
+                          controller: qty_controller,
                         ),
                         discription(
                           detail: 'Description',
+                          controller: discrip_controller,
                         ),
                       ],
                     )),
@@ -81,6 +90,10 @@ class _add_disState extends State<add_dis> {
                             ),
                             onPressed: () {
                               setState(() {
+                                name = name_controller.text;
+                                price = price_controller.text;
+                                qty = qty_controller.text;
+                                discrip = discrip_controller.text;
                                 Navigator.push(context,
                                     MaterialPageRoute(builder: (context) {
                                   return camera_gallery();
@@ -103,9 +116,16 @@ class _add_disState extends State<add_dis> {
   }
 }
 
+var name;
+var price;
+var qty;
+var discrip;
+
 class discription extends StatelessWidget {
   final String? detail;
-  discription({this.detail});
+  final controller;
+
+  discription({this.detail, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -118,6 +138,7 @@ class discription extends StatelessWidget {
           // Text('${detail}:'),
           Container(
             child: TextField(
+              controller: controller,
               decoration: InputDecoration(
                 focusedBorder:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
